@@ -1,0 +1,41 @@
+# Arquivos específicos do NetBeans
+/nbproject/private/
+/build/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+nbactions.xml
+
+# Diretórios de saída do projeto
+target/
+
+# Arquivos temporários e de backup
+*.tmp
+*.bak
+*.swp
+*~.nib
+.local.vagrant/
+
+# Arquivos de log
+*.log
+
+# Diretório de metadados do NetBeans
+/.metadata/
+
+# Diretórios de teste de unidade
+/testoutput/
+
+# Arquivos temporários do sistema operacional
+.DS_Store
+Thumbs.db
+
+# Arquivos de configuração do ambiente de desenvolvimento
+.idea/
+*.iml
+*.ipr
+*.iws
+.classpath
+.project
+.settings/
+
