@@ -94,14 +94,25 @@ public class LoginTela extends javax.swing.JFrame {
         String login = loginTextField.getText();
         //2. "Pegar" o que o usuário digitou no campo de senha
         String senha = new String(senhaPasswordField.getPassword());
-        //3. Fazer um if/else a fim de decidir se ele digitou admin/admin ou não
-        //escrever um if que verifica se o login é igual a admin
-        if (login.equals("admin") && senha.equals("admin")){
-            JOptionPane.showMessageDialog(null, "Bem vindo!");
+        
+        try{
+            Usuario usuario = new Usuario (login, senha);
+            DAO dao = new DAO();
+            if(dao.existe(usuario)){
+                JOptionPane.showMessageDialog(null, "Bem vindo " + usuario.getNome());
+                DashboardTela dt = new DashboardTela();
+                dt.setVisible(true);
+                dispose();
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "Usuário inválido");
+            }
         }
-        else{   
-            JOptionPane.showMessageDialog(null, "Usuário inválido");
+        catch (Exception e){
+            JOptionPane.showMessageDialog(null, "Problemas técnicos.");
+            e.printStackTrace();
         }
+        
     }//GEN-LAST:event_loginButtonActionPerformed
 
     /**
